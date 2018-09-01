@@ -7,6 +7,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.critical.baena.dto.CalcJsonObj;
+import com.critical.baena.dto.ExceptionError;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -41,15 +43,20 @@ public class JSONService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response createValuesInJson(String calcJsonObj) {
         ObjectMapper mapper = new ObjectMapper();
+        CalcJsonObj calcJsonObj1;
         try {
-            CalcJsonObj calcJsonObj1 = mapper.readValue(calcJsonObj, CalcJsonObj.class);
+            calcJsonObj1 = mapper.readValue(calcJsonObj, CalcJsonObj.class);
+            Calculate calculate = new Calculate(calcJsonObj1);
+            calculate.calculateOperation();
             LOG4J.info(calcJsonObj1);
         } catch (IOException e) {
             ExceptionError exceptionError = new ExceptionError(e.getMessage());
             LOG4J.fatal(exceptionError.getMessage());
+            LOG4J.fatal(exceptionError.toString());
             return Response.status(Response.Status.BAD_REQUEST).entity(exceptionError).type(MediaType.APPLICATION_JSON).build();
         }
 
-        return Response.status(Response.Status.OK).entity(calcJsonObj).type(MediaType.APPLICATION_JSON).build();
+        return Response.status(Response.Status.OK).entity(calcJsonObj1).type(MediaType.APPLICATION_JSON).build();
     }
+
 }

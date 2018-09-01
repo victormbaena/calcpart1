@@ -1,6 +1,6 @@
 package com.critical.baena.calculator;
 
-public class Average implements Calculator {
+public class Average implements ICalculator {
     @Override
     public double operation(double value1, double value2) {
         return (value1 + value2) /2;

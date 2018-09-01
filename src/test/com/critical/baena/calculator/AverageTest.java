@@ -1,21 +1,30 @@
 package com.critical.baena.calculator;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 
 public class AverageTest {
 
+    private Average average;
+
+    /**
+     * Sets up the test fixture. (Called before every test case method.)
+     */
+    @Before
+    public void setUp() {
+        average = new Average();
+    }
+
     @Test
     public void operationAverageTest() {
-        Average average = new Average();
-        assertEquals(2.2, average.operation(2.2, 2.2),0);
+        assertEquals(2.2, average.operation(2.2, 2.2), 0);
     }
 
     @Test
     public void operationAverageTestWithNegativeNumbers() {
-        Average average = new Average();
-        assertEquals(1.1, average.operation(-2.2, 4.4),0);
+        assertEquals(1.1, average.operation(-2.2, 4.4), 0);
     }
 
 }

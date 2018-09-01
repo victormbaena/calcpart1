@@ -1,6 +1,6 @@
 package com.critical.baena.calculator;
 
-public interface Calculator {
+public interface ICalculator {
 
     double operation(double value1, double value2);
 }
