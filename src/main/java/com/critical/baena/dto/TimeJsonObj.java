@@ -21,6 +21,6 @@ import java.time.format.DateTimeFormatter;
 public abstract class TimeJsonObj {
 
     public String getNow() {
-        return LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        return LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
     }
 }

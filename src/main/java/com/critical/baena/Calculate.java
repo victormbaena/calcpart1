@@ -11,6 +11,7 @@
 package com.critical.baena;
 
 import com.critical.baena.calculator.Add;
+import com.critical.baena.calculator.Average;
 import com.critical.baena.dto.CalcJsonObj;
 
 /**
@@ -27,9 +28,11 @@ public class Calculate {
 
     public double calculateOperation() {
         System.out.println(calcJsonObj.toString());
-        switch (calcJsonObj.getOperation().toUpperCase()) {
-        case "ADD":
-            return new Add().operation(1.5, 2.5);
+        switch (calcJsonObj.getOperation().name()) {
+        case "add":
+            return new Add().operation(calcJsonObj.getValue1(), calcJsonObj.getValue2());
+        case "avg":
+            return new Average().operation(calcJsonObj.getValue1(), calcJsonObj.getValue2());
         }
         return 0;
     }

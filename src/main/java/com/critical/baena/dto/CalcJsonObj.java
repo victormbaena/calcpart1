@@ -16,7 +16,7 @@ public class CalcJsonObj extends TimeJsonObj{
 
     private double value2;
 
-    private String operation;
+    private Operation operation;
 
     public double getValue1() {
         return value1;
@@ -34,16 +34,16 @@ public class CalcJsonObj extends TimeJsonObj{
         this.value2 = value2;
     }
 
-    public String getOperation() {
+    public Operation getOperation() {
         return operation;
     }
 
-    public void setOperation(String operation) {
+    public void setOperation(Operation operation) {
         this.operation = operation;
     }
 
     @Override
     public String toString() {
-        return "Super {" + super.getNow() + "} CalcJsonObj{" + "value1=" + value1 + ", value2=" + value2 + '}';
+        return "Super {" + super.getNow() + "} CalcJsonObj{" + "value1=" + value1 + ", value2=" + value2 + ", Operation: " + operation + '}';
     }
 }
