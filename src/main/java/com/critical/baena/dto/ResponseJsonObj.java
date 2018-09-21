@@ -4,6 +4,7 @@ public class ResponseJsonObj extends TimeJsonObj {
 
     private double result;
 
+    @SuppressWarnings("unused")
     public double getResult() {
         return result;
     }

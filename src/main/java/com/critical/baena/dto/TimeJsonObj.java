@@ -18,9 +18,9 @@ import java.time.format.DateTimeFormatter;
  * <p>
  * Created by Victor M. Baena on 01/09/2018.
  */
-public abstract class TimeJsonObj {
+abstract class TimeJsonObj {
 
-    public String getNow() {
+    String getNow() {
         return LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
     }
 }

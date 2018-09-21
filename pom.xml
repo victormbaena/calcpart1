@@ -14,12 +14,6 @@
         <jetty.version>9.4.11.v20180605</jetty.version>
     </properties>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
       <dependency>
           <groupId>com.sun.jersey</groupId>
           <artifactId>jersey-server</artifactId>
@@ -49,18 +43,31 @@
           <version>4.12</version>
           <scope>test</scope>
       </dependency>
-      <!--      <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-server</artifactId>
-                <version>${jetty.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-webapp</artifactId>
-                <version>${jetty.version}</version>
-                <scope>test</scope>
+      <!--       <dependency>
+                <groupId>com.critical.baena</groupId>
+                <artifactId>my-checkstyle-deps</artifactId>
+                <version>1.0.0</version>
+                <type>pom</type>
             </dependency>-->
+
+      <dependency>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.0.0</version>
+          <type>maven-plugin</type>
+      </dependency>
+      <!--   <dependency>
+              <groupId>org.eclipse.jetty</groupId>
+              <artifactId>jetty-server</artifactId>
+              <version>${jetty.version}</version>
+              <scope>test</scope>
+          </dependency>
+          <dependency>
+              <groupId>org.eclipse.jetty</groupId>
+              <artifactId>jetty-webapp</artifactId>
+              <version>${jetty.version}</version>
+              <scope>test</scope>
+          </dependency>-->
   </dependencies>
   <build>
     <finalName>appsite</finalName>

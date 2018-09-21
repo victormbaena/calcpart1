@@ -38,7 +38,8 @@ public class CalcJsonObj extends TimeJsonObj{
         return operation;
     }
 
-    public void setOperation(Operation operation) {
+    @SuppressWarnings("unused")
+    public void setOperation( Operation operation) {
         this.operation = operation;
     }
 

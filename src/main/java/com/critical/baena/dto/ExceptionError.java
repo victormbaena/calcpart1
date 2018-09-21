@@ -12,7 +12,7 @@ package com.critical.baena.dto;
 
 public class ExceptionError extends TimeJsonObj {
 
-    private String message;
+    private final String message;
 
     public ExceptionError(final String message) {
         this.message = message;
@@ -20,10 +20,6 @@ public class ExceptionError extends TimeJsonObj {
 
     public String getMessage() {
         return message;
-    }
-
-    public void setMessage(final String message) {
-        this.message = message;
     }
 
     @Override
